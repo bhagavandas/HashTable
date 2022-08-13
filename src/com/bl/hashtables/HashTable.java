@@ -2,14 +2,8 @@ package com.bl.hashtables;
 
 public class HashTable {
 	
-
 	ListNode table[];
-
-	public HashTable(int size) {
-		// TODO Auto-generated constructor stub
-		table = new ListNode[size];
-	}
-
+	int size;
 
 	public int hash(String key) {
 		return Math.abs(key.hashCode()) % table.length;
@@ -36,7 +30,7 @@ public class HashTable {
 					return;
 				}
 			}
-			
+			System.out.println(" Found the word and increments the count ");
 			table[bucket].count++;
 
 		}
@@ -46,18 +40,19 @@ public class HashTable {
 		
 		for (ListNode currentNode : table) {
 			if(currentNode == null)
-				System.out.println(" null");
+				System.out.println(" [NULL]");
 			else
-				System.out.print(currentNode.key + ": " + currentNode.count);
+				System.out.print(" " + currentNode.key + ": " + currentNode.count);
 		}
 	}
 
 	public void countWords(String str) {
+		this.size = str.split(" ").length;
+		table = new ListNode[size];
 		for( String word : str.split(" ")) {
 			System.out.print(" word: " + word);
 			put(word.toLowerCase());
 		}
 		display();
 	}
-
 }
