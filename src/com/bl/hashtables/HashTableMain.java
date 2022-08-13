@@ -16,6 +16,7 @@ public class HashTableMain {
 			HashTable hash = new HashTable();
 			//hash.countWords(str);
 			hash.countWords(str1);
+			hash.remove("avoidable");
 
 	
 

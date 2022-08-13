@@ -55,4 +55,16 @@ public class HashTable {
 		}
 		display();
 	}
+	
+	public void remove(String word) {
+
+		System.out.println(" Removing the word " + word);
+		for(int i = 0; i < table.length; i++) {
+			if(table[i] != null && table[i].key.equals(word)) {
+				table[i] = null;
+				break;
+			}
+		}
+		display();
+	}
 }
